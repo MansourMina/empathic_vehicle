@@ -180,11 +180,7 @@ def main():
             if not settings.synchronous_mode:
                 synchronous_master = True
                 settings.synchronous_mode = True
-<<<<<<< HEAD
                 settings.fixed_delta_seconds = 0.015
-=======
-                settings.fixed_delta_seconds = 0.05
->>>>>>> 6cd58283d71f784ad55fc927383fa19a7249cf1c
             else:
                 synchronous_master = False
         else:
