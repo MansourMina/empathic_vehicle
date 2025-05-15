@@ -339,7 +339,7 @@ def main():
         print('spawned %d vehicles and %d walkers, press Ctrl+C to exit.' % (len(vehicles_list), len(walkers_list)))
 
         # Example of how to use Traffic Manager parameters
-        traffic_manager.global_percentage_speed_difference(5.0)
+        traffic_manager.global_percentage_speed_difference(30.0)
 
         while True:
             if not args.asynch and synchronous_master:
@@ -353,7 +353,7 @@ def main():
             settings = world.get_settings()
             settings.synchronous_mode = False
             settings.no_rendering_mode = False
-            settings.fixed_delta_seconds = None
+            settings.fixed_delta_seconds = 0.015
             world.apply_settings(settings)
 
         print('\ndestroying %d vehicles' % len(vehicles_list))
