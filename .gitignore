@@ -1,0 +1,25 @@
+# Ignore everything
+*
+
+
+# Allow only these specific files and folders
+!run_all.bat
+!wait_for_carla.ps1
+!wait_for_carla_ready.py
+
+!CarlaUE4/
+!CarlaUE4/Config/
+!CarlaUE4/Config/**
+
+!PythonAPI/
+!PythonAPI/examples/
+!PythonAPI/examples/**
+
+!README
+
+# Ignore unwanted files inside allowed folders
+CarlaUE4/Config/*.tmp
+CarlaUE4/Config/*.bak
+PythonAPI/examples/__pycache__/
+PythonAPI/examples/*.pyc
+!.gitignore
