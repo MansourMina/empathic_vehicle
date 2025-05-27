@@ -3,8 +3,6 @@
 This project includes a batch script (`run_all.bat`) to automatically start the CARLA simulator and run traffic and control scripts.
 
 ---
-## Command to set python 3.7
-set  PATH=C:\Users\{Your PC}\AppData\Local\Programs\Python\Python37;C:\Users\{Your PC}\AppData\Local\Programs\Python\Python37-3
 ## Contents
 
 - `run_all.bat` → Main script that starts CARLA and all other steps
