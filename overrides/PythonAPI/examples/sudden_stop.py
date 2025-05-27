@@ -23,6 +23,7 @@ import time
 client = carla.Client('localhost', 2000)
 client.set_timeout(5.0)
 world = client.get_world()
+print(f"🌍 Sudden stop Verbunden mit Welt: {world.get_map().name}")
 
 blueprint_library = world.get_blueprint_library()
 

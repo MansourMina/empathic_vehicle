@@ -163,7 +163,7 @@ def main():
 
     try:
         world = client.get_world()
-
+        print(f"🌍 generate_traffic.py läuft auf: {world.get_map().name}")
         traffic_manager = client.get_trafficmanager(args.tm_port)
         traffic_manager.set_global_distance_to_leading_vehicle(2.5)
         if args.respawn:
