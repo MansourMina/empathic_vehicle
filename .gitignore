@@ -7,13 +7,8 @@
 !wait_for_carla.ps1
 !wait_for_carla_ready.py
 
-!CarlaUE4/
-!CarlaUE4/Config/
-!CarlaUE4/Config/**
-
-!PythonAPI/
-!PythonAPI/examples/
-!PythonAPI/examples/**
+!overrides/
+!overrides/**
 
 !README
 

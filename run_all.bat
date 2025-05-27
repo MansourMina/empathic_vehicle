@@ -1,4 +1,15 @@
 @echo off
+echo [INFO] Applying project overrides to CARLA files...
+
+xcopy /Y /S "overrides\CarlaUE4\Config\*" "CarlaUE4\Config\"
+xcopy /Y /S "overrides\PythonAPI\examples\*" "PythonAPI\examples\"
+
+echo [INFO] Overrides applied. Starting CARLA setup...
+@REM echo WARTE 5 SEKUNDEN...
+@REM echo ============================
+@REM ping -n 6 127.0.0.1 >nul
+
+echo Continue with launching Carla and scripts..
 SET "PYTHON_VERSION=python37"
 
 start cmd /k "cd /d .\PythonAPI\examples && %PYTHON_VERSION% -m pip install -r requirements.txt
@@ -23,7 +34,7 @@ echo ============================
 echo ============================
 echo INSTALLIERE REQUIREMENTS + STARTE generate_traffic.py
 echo ============================
-start cmd /k "cd /d .\PythonAPI\examples && %PYTHON_VERSION% -m pip install -r requirements.txt && %PYTHON_VERSION% generate_traffic.py"
+start cmd /k "cd /d .\PythonAPI\examples && %PYTHON_VERSION% generate_traffic.py"
 
 @REM echo ============================
 @REM echo WARTE 10 SEKUNDEN...
