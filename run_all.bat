@@ -63,7 +63,7 @@ start cmd /k "cd /d .\PythonAPI\carla\dist && %PYTHON_VERSION% -m pip install ca
 echo ============================
 echo STARTE CARLA SIMULATOR
 echo ============================
-start "" ".\CarlaUE4.exe" -RenderOffScreen
+start "" ".\CarlaUE4.exe" -RenderOffScreen -quality-level=Low -nosound -benchmark -carla-server 
 
 echo ============================
 echo WARTE BIS CARLA AUF PORT 2000 BEREIT IST...
