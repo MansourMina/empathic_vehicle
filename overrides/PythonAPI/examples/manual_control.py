@@ -423,10 +423,11 @@ class KeyboardControl(object):
                     world.hud.help.toggle()
                 elif event.key == K_TAB:
                     world.camera_manager.toggle_camera()
-                elif event.key == K_c and pygame.key.get_mods() & KMOD_SHIFT:
-                    world.next_weather(reverse=True)
-                elif event.key == K_c:
-                    world.next_weather()
+                # Wetter Key deaktivieren
+                # elif event.key == K_c and pygame.key.get_mods() & KMOD_SHIFT:
+                #     world.next_weather(reverse=True)
+                # elif event.key == K_c:
+                #     world.next_weather()
                 elif event.key == K_g:
                     world.toggle_radar()
                 elif event.key == K_BACKQUOTE:
@@ -1268,7 +1269,9 @@ def game_loop(args):
         display.fill((0,0,0))
         pygame.display.flip()
 
+        # Linke leiste ausblenden
         hud = HUD(args.width, args.height)
+        # world = World(sim_world, hud, args)
         world = World(sim_world, hud, args)
         controller = KeyboardControl(world, args.autopilot)
 
@@ -1285,7 +1288,8 @@ def game_loop(args):
             if controller.parse_events(client, world, clock, args.sync):
                 return
             world.tick(clock)
-            world.render(display)
+            # world.render(display)
+            world.camera_manager.render(display)
             pygame.display.flip()
 
     finally:

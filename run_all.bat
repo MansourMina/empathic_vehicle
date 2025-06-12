@@ -6,8 +6,8 @@ xcopy /Y /S "overrides\PythonAPI\examples\*" "PythonAPI\examples\"
 
 REM Szenario- und Wetter-Dateien aus zentraler Config lesen
 set ROOT=%~dp0
-set SCENARIO_FILE=%ROOT%config\selected_scenario.txt
-set WEATHER_FILE=%ROOT%config\selected_weather.txt
+set SCENARIO_FILE=%ROOT%scenario-config\selected_scenario.txt
+set WEATHER_FILE=%ROOT%scenario-config\selected_weather.txt
 
 for /f "usebackq delims=" %%A in ("%SCENARIO_FILE%") do set SCENARIO=%ROOT%%%A
 for /f "usebackq delims=" %%A in ("%WEATHER_FILE%") do set WEATHER=%ROOT%%%A
@@ -63,7 +63,7 @@ start cmd /k "cd /d .\PythonAPI\carla\dist && %PYTHON_VERSION% -m pip install ca
 echo ============================
 echo STARTE CARLA SIMULATOR
 echo ============================
-start "" ".\CarlaUE4.exe" -RenderOffScreen
+start "" ".\CarlaUE4.exe" -RenderOffScreen -quality-level=Low -nosound -benchmark -carla-server
 
 echo ============================
 echo WARTE BIS CARLA AUF PORT 2000 BEREIT IST...
