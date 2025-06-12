@@ -6,9 +6,20 @@
 !run_all.bat
 !wait_for_carla.ps1
 !wait_for_carla_ready.py
+!choose_scenario.py
+!scenario_launcher.py
 
 !overrides/
 !overrides/**
+
+!scenarios/
+!scenarios/**
+
+!scenario-config/
+!scenario-config/**
+
+!weather/
+!weather/**
 
 !README
 

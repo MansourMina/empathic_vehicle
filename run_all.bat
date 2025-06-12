@@ -6,8 +6,8 @@ xcopy /Y /S "overrides\PythonAPI\examples\*" "PythonAPI\examples\"
 
 REM Szenario- und Wetter-Dateien aus zentraler Config lesen
 set ROOT=%~dp0
-set SCENARIO_FILE=%ROOT%config\selected_scenario.txt
-set WEATHER_FILE=%ROOT%config\selected_weather.txt
+set SCENARIO_FILE=%ROOT%scenario-config\selected_scenario.txt
+set WEATHER_FILE=%ROOT%scenario-config\selected_weather.txt
 
 for /f "usebackq delims=" %%A in ("%SCENARIO_FILE%") do set SCENARIO=%ROOT%%%A
 for /f "usebackq delims=" %%A in ("%WEATHER_FILE%") do set WEATHER=%ROOT%%%A
