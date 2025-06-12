@@ -63,7 +63,7 @@ start cmd /k "cd /d .\PythonAPI\carla\dist && %PYTHON_VERSION% -m pip install ca
 echo ============================
 echo STARTE CARLA SIMULATOR
 echo ============================
-start "" ".\CarlaUE4.exe" -RenderOffScreen -quality-level=Low -nosound -benchmark -carla-server 
+start "" ".\CarlaUE4.exe" -RenderOffScreen -nosound -benchmark -carla-server  -fps=60
 
 echo ============================
 echo WARTE BIS CARLA AUF PORT 2000 BEREIT IST...
@@ -81,7 +81,7 @@ ping -n 11 127.0.0.1 >nul
 echo ============================
 echo INSTALLIERE REQUIREMENTS + STARTE generate_traffic.py
 echo ============================
-start cmd /k "cd /d .\PythonAPI\examples && %PYTHON_VERSION% generate_traffic.py"
+start cmd /k "cd /d .\PythonAPI\examples && %PYTHON_VERSION% generate_traffic.py -n 10 --safe"
 
 echo ============================
 echo [INFO] Starte Szenario: %SCENARIO%

@@ -1252,7 +1252,7 @@ def game_loop(args):
             settings = sim_world.get_settings()
             if not settings.synchronous_mode:
                 settings.synchronous_mode = True
-                settings.fixed_delta_seconds = 0.015
+                settings.fixed_delta_seconds = 0.0167
             sim_world.apply_settings(settings)
 
             traffic_manager = client.get_trafficmanager()

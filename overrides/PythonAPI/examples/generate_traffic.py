@@ -177,12 +177,9 @@ def main():
         settings = world.get_settings()
         if not args.asynch:
             traffic_manager.set_synchronous_mode(True)
-            if not settings.synchronous_mode:
-                synchronous_master = True
-                settings.synchronous_mode = True
-                settings.fixed_delta_seconds = 0.015
-            else:
-                synchronous_master = False
+            synchronous_master = not settings.synchronous_mode
+            settings.synchronous_mode = True
+            settings.fixed_delta_seconds = 0.0167
         else:
             print("You are currently in asynchronous mode. If this is a traffic simulation, \
             you could experience some issues. If it's not working correctly, switch to synchronous \
@@ -339,7 +336,7 @@ def main():
         print('spawned %d vehicles and %d walkers, press Ctrl+C to exit.' % (len(vehicles_list), len(walkers_list)))
 
         # Example of how to use Traffic Manager parameters
-        traffic_manager.global_percentage_speed_difference(30.0)
+        traffic_manager.global_percentage_speed_difference(0.0)
 
         while True:
             if not args.asynch and synchronous_master:
@@ -353,7 +350,7 @@ def main():
             settings = world.get_settings()
             settings.synchronous_mode = False
             settings.no_rendering_mode = False
-            settings.fixed_delta_seconds = 0.015
+            settings.fixed_delta_seconds = 0.0167
             world.apply_settings(settings)
 
         print('\ndestroying %d vehicles' % len(vehicles_list))
